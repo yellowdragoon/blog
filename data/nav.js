@@ -9,7 +9,6 @@ export const navigation = {
     { name: 'Now', href: '/now' },
     { name: 'Stats', href: '/stats' },
     { name: 'Activity', href: '/activity' },
-    { name: 'Recommends', href: '/recommends' },
     { name: 'Journey', href: '/journey' },
     { name: 'Tweets', href: '/tweets' },
     { name: 'RSS', href: '/feed.xml' },

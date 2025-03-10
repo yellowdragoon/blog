@@ -1,29 +1,29 @@
 const experienceData = [
   {
-    title: 'Data Engineering Intern',
-    company: 'Accenture',
-    location: 'Ahmedabad, India',
-    range: 'January 2022 - May 2022',
-    url: 'https://www.accenture.com/gr-en/about/consulting-index',
+    title: 'Software Engineering Intern | Strategy',
+    company: 'IMC Trading',
+    location: 'Amsterdam, Netherlands',
+    range: 'June 2024 - September 2024',
+    url: 'https://www.imc.com/eu',
     text1:
-      'Helped with the digital transformation of BOAT by working on their platform called ByteETL.',
+      'Developed a full-stack application for a dynamic knowledge graph of trade analysis microservices.',
     text2:
-      'Built the encryption component for the platform using Scala and Spark which included 2 encoding functionalities : ENCRYPT and HASH.',
+      'Built REST API endpoints with a Java backend to provide real-time diagnostics on service runners and Kafka topics.',
     text3:
-      'Created JSON wrappers for the encryption components and automated and triggered the pipelines to run at specific intervals using CronJob.',
+      'Used React/Next.js for frontend visualization, integrating with a data management platform and service configuration layer.',
   },
   {
-    title: 'Software Engineer Analytics',
-    company: 'HOPS Healthcare',
-    location: 'Ahmedabad, India',
-    range: 'March 2021 - June 2021',
-    url: 'https://hops.healthcare/',
+    title: 'Software Engineer Intern | Core Risk',
+    company: 'Square',
+    location: 'Dublin, Ireland',
+    range: 'May 2023 - September 2023',
+    url: 'https://squareup.com/ie/en/about',
     text1:
-      'Guided by Mr. Vivek Patel, to create a pipeline that extracts essential information from informal conversations.',
+      'Led a project reducing Square Debit Card fraud by 15% with a self-remediation system, building the Java backend and integrating microservices.',
     text2:
-      'Worked on creating a web app for their healthcare system for doctors to analyze and save reports.',
+      'Managed cross-functional meetings, aligning Banking and Data Science teams, delivering the project two weeks early.',
     text3:
-      'Developed functions for automatically extracting important elements from reports using BioBERT and Regex.',
+      'Optimized banking APIs using Docker, Kubernetes, Ruby, Java, Snowflake, and DynamoDB in an agile workflow.',
   },
 ]
 
