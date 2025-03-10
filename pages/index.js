@@ -5,8 +5,6 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { RoughNotation } from 'react-rough-notation'
-import NewsletterForm from '@/components/NewsletterForm'
-import ViewCounter from '@/components/ViewCounter'
 
 const MAX_DISPLAY = 3
 
@@ -60,17 +58,6 @@ export default function Home({ posts }) {
                 thoughts, reflections & everything&nbsp;
               </RoughNotation>
               in between. Have a good read!{' '}
-              <div className="mt-8 text-slate-600 dark:text-slate-400">
-                <span className="text-sm">Press</span>{' '}
-                <span className="rounded-md bg-gray-300 p-1 text-sm text-gray-900 dark:bg-gray-400">
-                  ⌘
-                </span>{' '}
-                <span className="text-sm">+ </span>
-                <span className="rounded-md bg-gray-300 p-1 text-sm text-gray-900 dark:bg-gray-400">
-                  K
-                </span>{' '}
-                <span className="text-sm">to start</span>
-              </div>
             </p>
           </div>
           {/* <div className="h-content sm:h-content-sm flex flex-col justify-around">
@@ -218,9 +205,6 @@ export default function Home({ posts }) {
                         <dt className="sr-only">Published on</dt>
                         <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
                           <time dateTime={date}>{formatDate(date)}</time>
-                          {' • '}
-                          <ViewCounter className="mx-1" slug={slug} />
-                          views
                         </dd>
                       </dl>
                       <div className="space-y-5 xl:col-span-4">
