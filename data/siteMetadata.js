@@ -3,7 +3,6 @@ const siteMetadata = {
   author: 'Henry Li',
   headerTitle: "Dragoon's Den",
   description: 'My personal website and blog',
-  snippets: 'Reuseable code snippets collected by Henry',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://blog-yellowdragoons-projects.vercel.app/',

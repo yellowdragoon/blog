@@ -23,7 +23,7 @@ import {
 
 export const getServerSideProps = async () => {
   const response = await fetch(
-    'https://api.openweathermap.org/data/2.5/weather?lat=23.014770&lon=72.526330&appid=1b3c10c18e894eaf1fd63eedde53fa54&units=metric'
+    'https://api.openweathermap.org/data/2.5/weather?lat=53.350140&lon=-6.266155&appid=1b3c10c18e894eaf1fd63eedde53fa54&units=metric'
   )
   const data = await response.json()
 
@@ -77,34 +77,34 @@ export default function Now(currentlyReading) {
     return () => clearInterval(timer)
   }, [])
 
-  var ParthBirthDate = '2000-04-16'
-  var birthDate = new Date(ParthBirthDate)
+  var HenryBirthDate = '2002-08-13'
+  var birthDate = new Date(HenryBirthDate)
 
-  var ParthAge = year - birthDate.getFullYear()
+  var HenryAge = year - birthDate.getFullYear()
 
-  var ParthMonth = 0
-  if (month >= birthDate.getMonth()) ParthMonth = month - birthDate.getMonth()
+  var HenryMonth = 0
+  if (month >= birthDate.getMonth()) HenryMonth = month - birthDate.getMonth()
   else {
-    ParthAge--
-    ParthMonth = 12 + month - birthDate.getMonth()
+    HenryAge--
+    HenryMonth = 12 + month - birthDate.getMonth()
   }
 
-  var ParthDay = 0
-  if (date >= birthDate.getDate()) ParthDay = date - birthDate.getDate()
+  var HenryDay = 0
+  if (date >= birthDate.getDate()) HenryDay = date - birthDate.getDate()
   else {
-    ParthMonth--
-    ParthDay = 31 + date - birthDate.getDate()
-    if (ParthMonth < 0) {
-      ParthMonth = 11
-      ParthAge--
+    HenryMonth--
+    HenryDay = 31 + date - birthDate.getDate()
+    if (HenryMonth < 0) {
+      HenryMonth = 11
+      HenryAge--
     }
   }
 
   var age = {}
   age = {
-    years: ParthAge,
-    months: ParthMonth,
-    days: ParthDay,
+    years: HenryAge,
+    months: HenryMonth,
+    days: HenryDay,
   }
 
   var ageString = ''
@@ -141,12 +141,12 @@ export default function Now(currentlyReading) {
         <div>
           <div className="flex justify-between gap-5">
             <div className="mt-2 mb-10 w-1/2 rounded-md border border-gray-600 p-1 text-sm dark:border-gray-200">
-              <span className="ml-2 font-semibold">Location:</span> <span>Ahmedabad, India</span>
+              <span className="ml-2 font-semibold">Location:</span> <span>Dublin, Ireland</span>
               <br />
               <span className="ml-2 font-semibold">Weather:</span>{' '}
               <span>
                 <a
-                  href="https://weather.com/en-GB/weather/today/l/f42d9f8baa19b4d8d5e034449faa703839993366f64551a56a2b530297075dc2"
+                  href="https://weather.com/en-GB/weather/today/l/036b720ce96da7a75a1cf4389e0d84511d9b72eda398a8dd0417396de814cab6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline-offset-1 hover:underline"
@@ -203,7 +203,7 @@ export default function Now(currentlyReading) {
                 )}
               </span>
               <br />
-              <span className="ml-2 font-semibold">Drinking:</span> <span>Coffee</span>
+              <span className="ml-2 font-semibold">Drinking:</span> <span>Taro Bubble Tea</span>
             </div>
           </div>
         </div>
