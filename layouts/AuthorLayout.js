@@ -77,16 +77,6 @@ export default function AuthorLayout({ children, frontMatter }) {
               </RoughNotation>
             </p>
             <br />
-            <p>
-              This is what I am doing right{' '}
-              <Link
-                href={'/now'}
-                className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-              >
-                now
-              </Link>
-            </p>
-            <br />
             <p className="sm:block md:hidden lg:hidden">
               I am always looking to learn new things. I am currently working on a few projects
               related to
@@ -158,13 +148,16 @@ export default function AuthorLayout({ children, frontMatter }) {
                     </g>
                   </g>
                 </svg>
-              </Link>{' '}
-              or{' '}
+              </Link>
+            </p>
+            <br />
+            <p>
+              This site is inspired by the following{' '}
               <Link
-                href={'https://api.whatsapp.com/send?phone=916358190818&text=hi'}
+                href={'https://github.com/pycoder2000/blog'}
                 className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
               >
-                Whatsapp
+                template
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -178,62 +171,8 @@ export default function AuthorLayout({ children, frontMatter }) {
                     </g>
                   </g>
                 </svg>
-              </Link>
-            </p>
-            <br />
-            <h1>About this site</h1>
-            <p>
-              Welcome to my home on the internet. This site functions as a blog/portfolio, a place
-              to share code and thoughts. Opinions are my own.
-            </p>
-            <p>
-              I learnt how to build this site from the most awesome people in the community:
-              <ul>
-                <li>
-                  <Link
-                    href={'https://github.com/timlrx/tailwind-nextjs-starter-blog'}
-                    className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-                  >
-                    Timothy's Next.js and Tailwind CSS template
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      className="ml-0.5 inline-block h-4 w-4 fill-current"
-                    >
-                      <g data-name="Layer 2">
-                        <g data-name="external-link">
-                          <rect width="24" height="24" opacity="0" />
-                          <path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z" />
-                          <path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z" />
-                        </g>
-                      </g>
-                    </svg>
-                  </Link>
-                  : Template starter where I bootstrapped the project.
-                </li>
-                <li>
-                  <Link
-                    href={'https://www.einargudni.com/'}
-                    className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-                  >
-                    Einar Guðjónsson
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      className="ml-0.5 inline-block h-4 w-4 fill-current"
-                    >
-                      <g data-name="Layer 2">
-                        <g data-name="external-link">
-                          <rect width="24" height="24" opacity="0" />
-                          <path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z" />
-                          <path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z" />
-                        </g>
-                      </g>
-                    </svg>
-                  </Link>
-                  : Now page, navigation style, animations and much more.
-                </li>
-              </ul>
+              </Link>{' '}
+              by Parth Desai.
             </p>
           </div>
         </div>
