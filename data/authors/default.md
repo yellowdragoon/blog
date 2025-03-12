@@ -1,7 +1,7 @@
 ---
 name: Henry Li
 avatar: /static/images/avatar.png
-occupation: Software Engineer
+occupation: Software Engineering Intern
 company: Stripe
 email: lih8@tcd.ie
 twitter: https://x.com/yellowdragoon1

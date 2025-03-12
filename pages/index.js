@@ -5,6 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { RoughNotation } from 'react-rough-notation'
+import Typewriter from '@/components/Typewriter'
 
 const MAX_DISPLAY = 3
 
@@ -23,7 +24,17 @@ export default function Home({ posts }) {
           <div className="pt-6">
             <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
               Hi, I am{' '}
-              <span className="text-primary-color-500 dark:text-primary-color-dark-500">Henry</span>
+              <span className="text-primary-color-500 dark:text-primary-color-dark-500">
+                <Typewriter
+                  words={['Henry', 'a Builder', 'a Mentor', 'a Thinker']}
+                  colors={[
+                    'text-primary-color-500',
+                    'text-green-500',
+                    'text-blue-500',
+                    'text-indigo-500',
+                  ]}
+                />
+              </span>
             </h1>
             <h2 className="prose pt-5 text-lg text-gray-600 dark:text-gray-300">
               {`Welcome to ${siteMetadata.description}. I am a Software Engineer who is passionate about building things with amazing people. In my free time, I like developing `}
