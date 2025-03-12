@@ -37,38 +37,35 @@ export default function Home({ posts }) {
               </span>
             </h1>
             <h2 className="prose pt-5 text-lg text-gray-600 dark:text-gray-300">
-              {`Welcome to ${siteMetadata.description}. I am a Software Engineer who is passionate about building things with amazing people. In my free time, I like developing `}
-              side projects and learning new technologies.
+              {`Welcome to ${siteMetadata.description}. I am a Software Engineer who is passionate about building things with amazing people. In my free time, I work on a variety of things, including Game Jams, Chess Engines, and other ad hoc projects.`}
             </h2>
             <p className="pt-5 text-lg leading-7 text-slate-600 dark:text-slate-300 sm:block md:hidden lg:hidden">
-              This is my place for{' '}
+              I hope you find something interesting here.
               <RoughNotation
-                animate="true"
-                type="box"
+                animationDelay="1000"
+                animationDuration="3000"
+                type="highlight"
+                color="#0ea4e9"
+                strokeWidth="3"
                 show={true}
-                color="#DE1D8D"
-                animationDelay={1000}
-                animationDuration={2500}
-                className="text-slate-200"
               >
-                thoughts, reflections & everything&nbsp;
+                {' '}
+                Thank you for visiting!
               </RoughNotation>
-              in between. Have a good read!
             </p>
             <p className="hidden pt-10 text-lg leading-7 text-slate-600 dark:text-slate-300 md:block">
-              This is my place for{' '}
+              I hope you find something interesting here.
               <RoughNotation
-                animate="true"
-                type="highlight"
+                animationDelay="1000"
+                animationDuration="3000"
+                type="underline"
+                color="#0ea4e9"
+                strokeWidth="3"
                 show={true}
-                color="#DE1D8D"
-                animationDelay={1000}
-                animationDuration={2500}
-                className="text-slate-200"
               >
-                thoughts, reflections & everything&nbsp;
+                {' '}
+                Thank you for visiting!
               </RoughNotation>
-              in between. Have a good read!{' '}
             </p>
           </div>
           {/* <div className="h-content sm:h-content-sm flex flex-col justify-around">
@@ -133,7 +130,7 @@ export default function Home({ posts }) {
               <div className="my-2 grid items-start gap-8">
                 <div className="group relative">
                   <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-emerald-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="https://blog-yellowdragoons-projects.vercel.app/">
+                  <Link href="/about">
                     <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
                       <span className="flex items-center space-x-5">
                         <svg
@@ -150,10 +147,10 @@ export default function Home({ posts }) {
                             d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                           />
                         </svg>
-                        <span className="pr-6 text-gray-900 dark:text-gray-100">Read my story</span>
+                        <span className="pr-6 text-gray-900 dark:text-gray-100">About Me</span>
                       </span>
                       <span className="pl-6 text-indigo-400 transition duration-200 group-hover:text-gray-900 dark:group-hover:text-gray-100">
-                        Website&nbsp;&rarr;
+                        Page&nbsp;&rarr;
                       </span>
                     </span>
                   </Link>
@@ -162,7 +159,7 @@ export default function Home({ posts }) {
               <div className="my-2 grid items-start gap-8">
                 <div className="group relative">
                   <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r  from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="https://parthdesai.vercel.app/resume.pdf">
+                  <Link href="https://www.youtube.com/@henryli904">
                     <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
                       <span className="flex items-center space-x-5">
                         <svg
@@ -182,11 +179,11 @@ export default function Home({ posts }) {
                           />
                         </svg>
                         <span className="pr-6 text-gray-900 dark:text-gray-100">
-                          Hire me!&nbsp;&nbsp;&nbsp;
+                          Videos&nbsp;&nbsp;&nbsp;
                         </span>
                       </span>
                       <span className="pl-6 text-primary-400 transition duration-200 group-hover:text-gray-900 dark:group-hover:text-gray-100">
-                        Resume&nbsp;&rarr;
+                        Youtube&nbsp;&rarr;
                       </span>
                     </span>
                   </Link>

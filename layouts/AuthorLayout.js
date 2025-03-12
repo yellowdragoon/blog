@@ -69,7 +69,7 @@ export default function AuthorLayout({ children, frontMatter }) {
               >
                 {text1} Currently, I am improving Debit payments at{' '}
                 <Link
-                  href={'https://www.accenture.com/in-en'}
+                  href={'https://stripe.com/ie'}
                   className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
                 >
                   Stripe
@@ -77,77 +77,26 @@ export default function AuthorLayout({ children, frontMatter }) {
               </RoughNotation>
             </p>
             <br />
-            <p className="sm:block md:hidden lg:hidden">
-              I am always looking to learn new things. I am currently working on a few projects
-              related to
-              <span className="font-semibold">
-                {' '}
-                Natural Language Processing and Machine Learning.{' '}
-              </span>
-              At the same time I am{' '}
-              <RoughNotation
-                type="underline"
-                show={true}
-                color="#FBCFE8"
-                animationDelay={1500}
-                animationDuration={3000}
-                multiline={true}
+            <p className="sm:block md:block lg:block">
+              I love broadening my horizons by finding new ways to combine my interests. Most
+              recently, I've decided to start writing on my new blog to materialize some of my
+              thoughts. I've also started to get involved around the various events held at{' '}
+              <Link
+                href={'https://dogpatchlabs.com/'}
+                className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
               >
-                actively on the lookout for remote internships which I can pursue in field of Data
-                Science.
-              </RoughNotation>
-            </p>
-            <p className="hidden md:block">
-              I am always looking to learn new things. I am currently working on a few projects
-              related to{' '}
-              <RoughNotation
-                animationDelay="1000"
-                animationDuration="3000"
-                type="highlight"
-                color="#0ea4e9"
-                strokeWidth="3"
-                show={true}
-              >
-                <span className="text-black dark:text-white">
-                  Natural Language Processing and Machine Learning.{' '}
-                </span>
-              </RoughNotation>
-              At the same time I am{' '}
-              <RoughNotation
-                type="underline"
-                show={true}
-                color="#FBCFE8"
-                animationDelay={1500}
-                animationDuration={3000}
-                multiline={true}
-              >
-                actively on the lookout for remote internships which I can pursue in field of Data
-                Science
-              </RoughNotation>
+                Dogpatch Labs
+              </Link>{' '}
+              in the last year - it's very inspiring to meet many talented builders.
             </p>
             <br />
             <p>
-              I am a strong advocate for open source and I am always interested in working on new
-              projects with new people. Feel free to reach out if you have anything to talk about,
-              you can reach me through{' '}
+              If you'd like to work with me, feel free to reach out via any of my{' '}
               <Link
-                href={'mailto:lih8@tcd.ie'}
+                href={'/contact'}
                 className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
               >
-                Mail
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  className="ml-0.5 inline-block h-4 w-4 fill-current"
-                >
-                  <g data-name="Layer 2">
-                    <g data-name="external-link">
-                      <rect width="24" height="24" opacity="0" />
-                      <path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z" />
-                      <path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z" />
-                    </g>
-                  </g>
-                </svg>
+                contacts
               </Link>
             </p>
             <br />
