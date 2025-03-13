@@ -44,10 +44,11 @@ export default function Home({ posts }) {
               <RoughNotation
                 animationDelay="1000"
                 animationDuration="3000"
-                type="highlight"
+                type="underline"
                 color="#0ea4e9"
                 strokeWidth="3"
                 show={true}
+                multiline={true}
               >
                 {' '}
                 Thank you for visiting!
