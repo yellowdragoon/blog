@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'My personal website and blog',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://blog-yellowdragoons-projects.vercel.app/',
+  siteUrl: 'https://henryli.dev/',
   siteRepo: 'https://github.com/yellowdragoon/blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
@@ -14,7 +14,7 @@ const siteMetadata = {
   github: 'https://github.com/yellowdragoon',
   twitter: 'https://x.com/yellowdragoon1',
   linkedin: 'https://www.linkedin.com/in/henry-li-219a511b8/',
-  website: 'https://blog-yellowdragoons-projects.vercel.app/',
+  website: 'https://henryli.dev/',
   locale: 'en-US',
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app

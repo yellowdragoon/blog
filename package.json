@@ -5,7 +5,7 @@
   "author": {
     "name": "Henry Li",
     "email": "lih8@tcd.ie",
-    "url": "https://blog-yellowdragoons-projects.vercel.app/"
+    "url": "https://henryli.dev"
   },
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",

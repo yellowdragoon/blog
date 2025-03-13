@@ -1,4 +1,4 @@
-Sitemap: https://blog-yellowdragoons-projects.vercel.app/sitemap.xml
+Sitemap: https://henryli.dev/sitemap.xml
 
 User-agent: *
 Allow: /
