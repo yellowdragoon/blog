@@ -72,7 +72,7 @@ export default function AuthorLayout({ children, frontMatter }) {
                   href={'https://stripe.com/ie'}
                   className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
                 >
-                  Stripe
+                  Stripe.
                 </Link>
               </RoughNotation>
             </p>
@@ -96,7 +96,7 @@ export default function AuthorLayout({ children, frontMatter }) {
                 href={'/contact'}
                 className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
               >
-                contacts
+                contacts.
               </Link>
             </p>
             <br />
