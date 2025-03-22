@@ -94,7 +94,11 @@ One idea is to construct a lookup table for each of the 64 squares, where we tak
 
 However, can you see the problem? The resulting tables would be huge, since for 63 possible squares of occupancy (excluding the slider square), we would have 2^63 configurations/entries in each lookup table - which needless to say is **not** a feasible option. [Read this classic rice grain story](https://en.wikipedia.org/wiki/Wheat_and_chessboard_problem) if you're not convinced.
 
-The solution to this is really quite magical. What we can do is, for each square, compute a magic number through brute force. The necessary property of this number is that when we take our occupancy bitboard, multiply it by the number, and mask out a fixed number of bits, we can use the result as an index into a much smaller lookup table of legal moves! Here's an illustration to explain the concept:
+#### Magic Bitboards
+
+The solution to problem lies in using a [perfect hashing](https://www.chessprogramming.org/Hash_Table#PerfectHashing) algorithm to greatly reduce the size of our lookup table. This is possible because many of the possible blocker configurations map to the same set of legal moves. Therefore, we need a way to transform these equivalent blocker states to the same key for lookup.
+
+What we do is, for each square, compute a "magic number" through brute force. The necessary property of this number is that when we take our occupancy bitboard, multiply it by the number, and mask out a fixed number of bits, we can use the result as an index into a much smaller lookup table of legal moves! Here's an illustration to explain the concept:
 
 <img
   className="inline"
