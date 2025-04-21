@@ -74,6 +74,7 @@ The simplest evaluation function assigns scores to each piece type and adds up t
 - Pawn: 1
 
 White: 1 Queen, 1 Rook, 3 Pawns = 9 + 5 + 3(1) = 17
+
 Black: 2 Bishops, 2 Knights, 7 Pawns = 2(3) + 2(3) + 7(1) = 19
 
 17 - 19 = -2 (from White's perspective), or +2 (from Black's perspective)
@@ -144,7 +145,7 @@ In the above scenario, we will choose move Z, since it is the deepest search we 
 
 One advantage of iterative deepening is that we can use the best move sequence or _principal variation (PV)_ from a lower depth to inform our move ordering for the higher depth. For example:
 
-- Depth 2: best moves for White is move X, then best response from Black is Y
+- Depth 2: best move for White is move X, then best response from Black is Y
 - Depth 3: prioritize looking at moves X/Y, since they were best in depth 2
 
 Surprisingly, dynamic move ordering heuristics such as PV that are enabled by iterative deepening are so effective that it's actually more efficient to use iterative deepening rather than searching directly at the high depth!
