@@ -26,7 +26,7 @@ Conceptually, the task is very easy to understand, but in practice it's very dif
 
 ## The Basics: Minimax
 
-Given a chess position, how to find the best move? If we had infinite computing power, the answer to this question is to brute-force every possibility in the game tree until a terminal state is reached, and to use this information to make a decision. Here's the common example of tic-tac-toe to illustrate how this strategy works in practice:
+Given a chess position, how do we find the best move? If we had infinite computing power, the answer to this question would be to brute-force every possibility in the game tree until a terminal state is reached, and to use this information to make a decision. Here's the common example of tic-tac-toe to illustrate how this strategy works in practice:
 
 <img
   className="inline"
@@ -58,7 +58,7 @@ It's time to build upon this foundational strategy to improve on minimax, but fi
 
 ## Branching Factor
 
-For a simple game like tic-tac-toe, minimax works perfectly because we can brute force every possibility to the end of the game. The game can only be 9 moves long at most, and each move there is a of maximum of 9 possible moves. Furthermore, the number of possible moves reduces by 1 every turn, so this naturally leads us to 9! = 362,880 possible positions, but in reality games can end early, so the true number is 255,168 according to [stackexchange](https://math.stackexchange.com/questions/269066/game-combinations-of-tic-tac-toe). The _branching factor_ for a game tree refers to the number of possible options every move. The larger this factor, the more the search space will explode as the number of moves grow. Usually, this number is not fixed, so we compute or approximate the _average branching factor_ of the game. For tic-tac-toe, this number is around 4, which is very low. Coming back to chess, the average branching factor is 35. Coupled with the fact that the average game length is around 70 moves, it is clear that brute force is computationally infeasible.
+For a simple game like tic-tac-toe, minimax works perfectly because we can brute force every possibility to the end of the game. The game can only be 9 moves long at most, and for each move there is a maximum of 9 possible moves. Furthermore, the number of possible moves reduces by 1 every turn, so this naturally leads us to 9! = 362,880 possible positions—though in reality games can end early, so the true number is 255,168 (according to [stackexchange](https://math.stackexchange.com/questions/269066/game-combinations-of-tic-tac-toe)). The _branching factor_ for a game tree refers to the number of possible options for every move. The larger this factor, the more the search space will explode as the number of moves grow. Usually, this number is not fixed, so we compute or approximate the _average branching factor_ of the game. For tic-tac-toe, this number is around 4, which is very low. Coming back to chess, the average branching factor is 35. Coupled with the fact that the average game length is around 70 moves, it is clear that brute force is computationally infeasible.
 
 35^70 = More than the number of atoms in the observable universe! (By ~27 zeros)
 
@@ -106,7 +106,7 @@ The first improvement we'll discuss is a modification to the minimax depth searc
 - We are considering 2 moves for White, move A and move B
 - After fully evaluating move A, we give it a score of +3
 - We start evaluating move B. We find that Black has a response which leads to a score of +1
-- We can immediately stop looking at other Black responses to move B! We already know that move A is better than move B because Black is guaranteed to obtain a score of +1 (or better) versus the guarantee of +3 in move A
+- We can immediately stop looking for any more of Black's responses to move B! We already know that move A is better than move B because Black is guaranteed to obtain a score of +1 (or better) versus the guarantee of +3 for White in move A
 
 Therefore, we can 'prune' the search of move B early, without losing any accuracy. The alpha and beta values represents the best score that each player is guaranteed so far, and by keeping track of these 2 values during search we can prune many branches of the search tree.
 
@@ -174,7 +174,7 @@ How many squares on the chessboard does our pieces control? The higher this numb
 
 ## Conclusion
 
-The combination of a meticulously hand-crafted evaluation function and a highly optimized search algorithm has culminated in the Stockfish chess engine (amongst many others!). This brings us roughly to the state-of-the-art from about 5-10 years ago.
+The combination of a meticulously hand-crafted evaluation function and a highly optimized search algorithm has culminated in the Stockfish chess engine (amongst many others). This brings us roughly to the state-of-the-art from about 5-10 years ago.
 
 A note to the curious: while I've covered many of the fundamental building blocks of the modern chess engine, there are still many improvements and techniques that I have not mentioned. My goal here is to help you understand the **essence** of the main ideas, so you have the prerequisite knowledge to jump into any further techniques. If you are curious, I'd encourage you to explore the [Chess Programming Wiki](https://www.chessprogramming.org/Main_Page) for much more detailed information.
 
