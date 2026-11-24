@@ -1,4 +1,4 @@
-Sitemap: https://henryli.dev/sitemap.xml
+Sitemap: https://www.henryli.dev/sitemap.xml
 
 User-agent: *
 Allow: /

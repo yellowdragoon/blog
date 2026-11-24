@@ -21,7 +21,7 @@ const linkCards = [
     label: 'What I built',
     linkText: 'Projects',
     iconColor: 'text-green-600',
-    linkColor: 'text-amber-400',
+    linkColor: 'text-amber-700 dark:text-amber-400',
     glow: 'from-pink-600 to-purple-600',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,7 +39,7 @@ const linkCards = [
     label: 'About Me',
     linkText: 'Page',
     iconColor: 'text-pink-600',
-    linkColor: 'text-indigo-400',
+    linkColor: 'text-indigo-600 dark:text-indigo-400',
     glow: 'from-fuchsia-600 to-emerald-600',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +57,7 @@ const linkCards = [
     label: 'Videos',
     linkText: 'YouTube',
     iconColor: 'text-fuchsia-600',
-    linkColor: 'text-primary-400',
+    linkColor: 'text-primary-600 dark:text-primary-400',
     glow: 'from-pink-600 to-purple-600',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
