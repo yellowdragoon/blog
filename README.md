@@ -13,24 +13,14 @@
 
 ## Running locally
 
+Needs Node 22 (see `engines` in `package.json`).
+
 ```sh
 npm install
-cp .env.example .env.local   # then fill in the values you need
-npm start                    # dev server that also reloads when files in data/ change
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). `npm run dev` runs plain `next dev` without the content watcher.
-
-Most features work without any environment variables. These are only needed for:
-
-| Feature                    | Variables                                                              |
-| -------------------------- | ---------------------------------------------------------------------- |
-| View counts, guestbook     | `DATABASE_URL` (MySQL, via Prisma)                                     |
-| Guestbook sign-in          | `OAUTH_CLIENT_KEY`, `OAUTH_CLIENT_SECRET`, `NEXTAUTH_URL`, `SECRET`    |
-| Newsletter (EmailOctopus)  | `EMAILOCTOPUS_API_URL`, `EMAILOCTOPUS_API_KEY`, `EMAILOCTOPUS_LIST_ID` |
-| Spotify "now playing"      | `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, `SPOTIFY_REFRESH_TOKEN`  |
-| Twitter embeds and stats   | `TWITTER_API_KEY`, `TWITTER_BEARER_TOKEN`                              |
-| Giscus comments (disabled) | `NEXT_PUBLIC_GISCUS_*`                                                 |
+Open [http://localhost:3000](http://localhost:3000). No environment variables are needed.
 
 ## Production build
 
@@ -61,13 +51,12 @@ Put the post's images in `public/static/images/Blog/`.
 
 ```
 data/            content and settings: posts, author bio, projects, experience, nav links, siteMetadata.js
-pages/           routes, plus pages/api for views, guestbook, newsletter, Spotify, GitHub stats
+pages/           routes
 layouts/         page templates (post, list, author, ...)
 components/      React components
-lib/             MDX pipeline, RSS, tags and third-party API helpers
-prisma/          database schema
+lib/             MDX pipeline, RSS and tags
 public/static/   images, favicons, sounds
-scripts/         compose, sitemap generation, content watcher
+scripts/         new-post prompt and sitemap generation
 ```
 
 ## Credits

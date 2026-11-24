@@ -30,18 +30,7 @@ class MyDocument extends Document {
             content="Henry Li's personal blog: writing on software engineering, chess engines and life."
           />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-            integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
-            crossOrigin="anonymous"
-          />
-          <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+          <link rel="icon" href="/static/favicons/favicon.ico" sizes="any" />
           <meta
             name="google-site-verification"
             content="_Ba0lKk4Dl9XMvABJ9gZEtoMPITT5Vr5TGx2M-34Z_I"
