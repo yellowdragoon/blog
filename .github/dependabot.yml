@@ -1,0 +1,17 @@
+# Weekly dependency update PRs. New releases must be at least a week old before
+# Dependabot proposes them, so a compromised version has time to be caught and
+# pulled from npm first.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    open-pull-requests-limit: 5
+
