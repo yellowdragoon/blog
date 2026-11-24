@@ -5,13 +5,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
   font-src 'self';
-  frame-src giscus.app
+  frame-src 'none'
 `
 
 const securityHeaders = [
@@ -54,29 +54,6 @@ const securityHeaders = [
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
-  images: {
-    domains: [
-      'i.scdn.co', // Spotify Album Art
-      'pbs.twimg.com',
-      'cdn.discordapp.com', // discord url
-      'avatars.githubusercontent.com',
-      'github.com',
-      's3.us-west-2.amazonaws.com', // Images coming from Notion
-      'via.placeholder.com', // for articles that do not have a cover image
-      'images.unsplash.com', // For blog posts that use an external cover image
-      'pbs.twimg.com', // Twitter Profile Picture
-      'dwgyu36up6iuz.cloudfront.net',
-      'cdn.hashnode.com',
-      'res.craft.do',
-      'res.cloudinary.com', // Twitter Profile Picture
-    ],
-  },
-  rewrites: async () => [
-    {
-      source: '/public/terms.html',
-      destination: '/pages/api/html.js',
-    },
-  ],
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],

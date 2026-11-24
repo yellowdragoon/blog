@@ -10,14 +10,8 @@ import NProgress from 'nprogress'
 import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
-import { ClientReload } from '@/components/ClientReload'
 import ProgressBar from 'react-scroll-progress-bar'
 import ScrollTop from '@/components/ScrollTop'
-import { SessionProvider } from 'next-auth/react'
-import { Provider } from '@lyket/react'
-
-const isDevelopment = process.env.NODE_ENV === 'development'
-const isSocket = process.env.SOCKET
 
 NProgress.configure({ showSpinner: false })
 
@@ -50,21 +44,18 @@ const defaultTheme = {
   },
 }
 
-export default function App({ Component, pageProps: { session, ...pageProps } }) {
+export default function App({ Component, pageProps }) {
   return (
-    <SessionProvider session={session}>
-      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-        <ProgressBar bgcolor="#DE1D8D" />
-        <ScrollTop />
-        <Head>
-          <meta content="width=device-width, initial-scale=1" name="viewport" />
-        </Head>
-        {isDevelopment && isSocket && <ClientReload />}
-        <Analytics />
-        <LayoutWrapper>
-          <Component {...pageProps} />
-        </LayoutWrapper>
-      </ThemeProvider>
-    </SessionProvider>
+    <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+      <ProgressBar bgcolor="#DE1D8D" />
+      <ScrollTop />
+      <Head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+      </Head>
+      <Analytics />
+      <LayoutWrapper>
+        <Component {...pageProps} />
+      </LayoutWrapper>
+    </ThemeProvider>
   )
 }
