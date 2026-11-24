@@ -98,7 +98,10 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                               href={author.twitter}
                               className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                             >
-                              {author.twitter.replace('https://twitter.com/', '@')}
+                              {author.twitter.replace(
+                                /^https?:\/\/(www\.)?(twitter|x)\.com\//,
+                                '@'
+                              )}
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -122,7 +125,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pb-8 pt-10 dark:prose-dark">{children}</div>
+              <div className="prose max-w-2xl pb-8 pt-10 dark:prose-dark md:prose-lg">
+                {children}
+              </div>
               <div className="grid place-items-center pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">
                 <div className="flex items-center space-x-4">
                   <XShareButton
