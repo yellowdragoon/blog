@@ -25,10 +25,6 @@ class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-          <meta
-            name="description"
-            content="Henry Li's personal blog: writing on software engineering, chess engines and life."
-          />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
           <link rel="icon" href="/static/favicons/favicon.ico" sizes="any" />
           <meta
