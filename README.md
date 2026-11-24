@@ -13,7 +13,7 @@
 
 ## Running locally
 
-Needs Node 22 (see `engines` in `package.json`).
+Needs Node 22 or newer.
 
 ```sh
 npm install
