@@ -4,7 +4,6 @@ import Link from './Link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import ThemeSwitch from './ThemeSwitch'
-import Typewriter from 'typewriter-effect'
 import { useRouter } from 'next/router'
 import DropMenu from './DropMenu.js'
 // import Logo from '@/data/logo.svg'
@@ -31,14 +30,10 @@ const LayoutWrapper = ({ children }) => {
                 )}
               </div> */}
               <div className="text-primary-color dark:text-primary-color-dark flex items-center justify-between text-xl font-semibold">
-                {`~${router.asPath}`}{' '}
-                <Typewriter
-                  options={{
-                    strings: [],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
+                {`~${router.asPath}`}
+                <span className="terminal-cursor" aria-hidden="true">
+                  |
+                </span>
               </div>
             </Link>
           </div>
