@@ -7,7 +7,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import {
   FacebookShareButton,
-  TwitterShareButton,
+  XShareButton,
   EmailShareButton,
   LinkedinShareButton,
   RedditShareButton,
@@ -19,7 +19,13 @@ import { BsCalendarDate } from 'react-icons/bs'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 
-const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+const postDateTemplate = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+}
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, fileName, date, title, images, tags, readingTime } = frontMatter
@@ -40,7 +46,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                     <time dateTime={date}>
-                      <BsCalendarDate className="mr-1.5 -mt-1.5 inline h-4 w-4" />
+                      <BsCalendarDate className="-mt-1.5 mr-1.5 inline h-4 w-4" />
                       {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
                     </time>
                   </dd>
@@ -65,7 +71,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
+            <dl className="pb-10 pt-6 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
               <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
@@ -74,8 +80,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       {author.avatar && (
                         <Image
                           src={author.avatar}
-                          width="38px"
-                          height="38px"
+                          width={38}
+                          height={38}
                           alt="avatar"
                           className="h-10 w-10 rounded-full"
                           placeholder="blur"
@@ -116,28 +122,30 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
-              <div className="grid place-items-center pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
+              <div className="prose max-w-none pb-8 pt-10 dark:prose-dark">{children}</div>
+              <div className="grid place-items-center pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">
                 <div className="flex items-center space-x-4">
-                  <TwitterShareButton
+                  <XShareButton
                     url={postUrl}
                     title={title}
                     via={siteMetadata.socialAccount.twitter}
-                    className="flex items-center overflow-hidden rounded-full !bg-[#1da1f2] hover:scale-110"
+                    className="flex items-center overflow-hidden rounded-full !bg-black hover:scale-110"
                   >
                     <SocialIcon
-                      network="twitter"
+                      as="span"
+                      network="x"
                       style={{ height: 35, width: 35 }}
                       fgColor="#fff"
-                      bgColor="#1da1f2"
+                      bgColor="#000"
                     />
-                  </TwitterShareButton>
+                  </XShareButton>
                   <FacebookShareButton
                     url={postUrl}
                     quote={title}
                     className="flex items-center overflow-hidden rounded-full !bg-[#1877f2] hover:scale-110"
                   >
                     <SocialIcon
+                      as="span"
                       network="facebook"
                       style={{ height: 35, width: 35 }}
                       fgColor="#fff"
@@ -152,6 +160,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     className="flex items-center overflow-hidden rounded-full !bg-[#B61AC1] hover:scale-110"
                   >
                     <SocialIcon
+                      as="span"
                       network="email"
                       style={{ height: 35, width: 35 }}
                       fgColor="#fff"
@@ -166,6 +175,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     className="flex items-center overflow-hidden rounded-full !bg-[#0072b1] hover:scale-110"
                   >
                     <SocialIcon
+                      as="span"
                       network="linkedin"
                       style={{ height: 35, width: 35 }}
                       fgColor="#fff"
@@ -178,6 +188,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     className="flex items-center overflow-hidden rounded-full !bg-[#ff4500] hover:scale-110"
                   >
                     <SocialIcon
+                      as="span"
                       network="reddit"
                       style={{ height: 35, width: 35 }}
                       fgColor="#fff"
@@ -191,6 +202,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     className="flex items-center overflow-hidden rounded-full !bg-[#25D366] hover:scale-110"
                   >
                     <SocialIcon
+                      as="span"
                       network="whatsapp"
                       style={{ height: 35, width: 35 }}
                       fgColor="#fff"
@@ -202,6 +214,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     className="flex items-center overflow-hidden rounded-full !bg-[#5A6272] hover:scale-110"
                   >
                     <SocialIcon
+                      as="span"
                       network="github"
                       style={{ height: 35, width: 35 }}
                       fgColor="#fff"

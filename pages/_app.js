@@ -10,25 +10,16 @@ import NProgress from 'nprogress'
 import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
-import ProgressBar from 'react-scroll-progress-bar'
+import ScrollProgressBar from '@/components/ScrollProgressBar'
 import ScrollTop from '@/components/ScrollTop'
 
 NProgress.configure({ showSpinner: false })
 
-Router.onRouteChangeStart = () => {
-  // console.log('onRouteChangeStart triggered');
-  NProgress.start()
-}
+Router.events.on('routeChangeStart', () => NProgress.start())
 
-Router.onRouteChangeComplete = () => {
-  // console.log('onRouteChangeComplete triggered');
-  NProgress.done()
-}
+Router.events.on('routeChangeComplete', () => NProgress.done())
 
-Router.onRouteChangeError = () => {
-  // console.log('onRouteChangeError triggered');
-  NProgress.done()
-}
+Router.events.on('routeChangeError', () => NProgress.done())
 
 const defaultTheme = {
   colors: {
@@ -47,7 +38,7 @@ const defaultTheme = {
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-      <ProgressBar bgcolor="#DE1D8D" />
+      <ScrollProgressBar color="#DE1D8D" />
       <ScrollTop />
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />

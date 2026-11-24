@@ -30,8 +30,10 @@ const useTypewriter = (words, colors, typingSpeed = 100, deleteSpeed = 100, dela
         }, deleteSpeed)
       } else {
         // Move to next word
-        setIsDeleting(false)
-        setWordIndex((prev) => (prev + 1) % words.length)
+        timeout = setTimeout(() => {
+          setIsDeleting(false)
+          setWordIndex((prev) => (prev + 1) % words.length)
+        }, 0)
       }
     }
 
