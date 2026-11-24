@@ -11,7 +11,7 @@ const projectsData = [
   },
   {
     title: 'HTTP Web Proxy',
-    description: `an implementation of an HTTP proxy server using Python. The proxy server acts as an intermediary between clients and web servers, enabling features such as caching, access control, and bandwidth optimization.`,
+    description: `An implementation of an HTTP proxy server using Python. The proxy server acts as an intermediary between clients and web servers, enabling features such as caching, access control, and bandwidth optimization.`,
     imgSrc: '',
     href: '',
     github: 'https://github.com/yellowdragoon/HTTP-Web-Proxy',

@@ -10,7 +10,7 @@ Part 1: The Game Representation can be found [here](https://www.henryli.dev/blog
 
 This part of the _Programming Chess Engines_ series focuses on search algorithms. Let's start with a brief primer on what we have so far:
 
-# Background
+## Background
 
 Assume that we have a functional board representation, complete with functionality for common methods such as:
 
@@ -22,16 +22,18 @@ This is the backbone of our chess engine, but now we must fill in the brains, wh
 
 Conceptually, the task is very easy to understand, but in practice it's very difficult. Why is that? The goal is for us to answer that question by the end of this article. Without further ado, let's dive straight into the basics of search algorithms.
 
-# Part 2: Search and Evaluation
+## Part 2: Search and Evaluation
 
-## The Basics: Minimax
+### The Basics: Minimax
 
 Given a chess position, how do we find the best move? If we had infinite computing power, the answer to this question would be to brute-force every possibility in the game tree until a terminal state is reached, and to use this information to make a decision. Here's the common example of tic-tac-toe to illustrate how this strategy works in practice:
 
 <img
+  loading="lazy"
+  decoding="async"
   className="inline"
   src="/static/images/Blog/programming_chess_engines_part_2_1.png"
-  alt="diagram of shifting a pawn bitboard to move forward 1 square"
+  alt="game tree of a tic-tac-toe position, branching into possible moves until each line ends in a win, loss or draw"
   style={{ width: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
 />
 
@@ -44,9 +46,11 @@ When we get to a terminal state, it makes sense to assign that state a score, fo
 We can now propagate this score up the game tree to the _root node_, or our current position. If it is our turn to move and we can win the game with a certain move, then the score for the position should be +1, since we've looked ahead to know we can reach the winning position. This process works recursively.
 
 <img
+  loading="lazy"
+  decoding="async"
   className="inline"
   src="/static/images/Blog/programming_chess_engines_part_2_2.png"
-  alt="diagram of shifting a pawn bitboard to move forward 1 square"
+  alt="the same tic-tac-toe game tree with scores of +1 for a win and -1 for a loss propagated back up to the root position, which scores +1"
   style={{ width: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
 />
 
@@ -56,7 +60,7 @@ And that's all there is to the rudimentary search algorithm known as _minimax_! 
 
 It's time to build upon this foundational strategy to improve on minimax, but first, we must answer the question: why does naive minimax not work for chess?
 
-## Branching Factor
+### Branching Factor
 
 For a simple game like tic-tac-toe, minimax works perfectly because we can brute force every possibility to the end of the game. The game can only be 9 moves long at most, and for each move there is a maximum of 9 possible moves. Furthermore, the number of possible moves reduces by 1 every turn, so this naturally leads us to 9! = 362,880 possible positions—though in reality games can end early, so the true number is 255,168 (according to [stackexchange](https://math.stackexchange.com/questions/269066/game-combinations-of-tic-tac-toe)). The _branching factor_ for a game tree refers to the number of possible options for every move. The larger this factor, the more the search space will explode as the number of moves grow. Usually, this number is not fixed, so we compute or approximate the _average branching factor_ of the game. For tic-tac-toe, this number is around 4, which is very low. Coming back to chess, the average branching factor is 35. Coupled with the fact that the average game length is around 70 moves, it is clear that brute force is computationally infeasible.
 
@@ -64,7 +68,7 @@ For a simple game like tic-tac-toe, minimax works perfectly because we can brute
 
 In order to not have to evaluate the entire game tree, we have to be able to assign scores to non-terminal positions, which segues into our next topic.
 
-## Evaluation
+### Evaluation
 
 The simplest evaluation function assigns scores to each piece type and adds up the total score for both sides. The difference between these scores is the evaluation of the position. A concrete example:
 
@@ -82,9 +86,11 @@ Black: 2 Bishops, 2 Knights, 7 Pawns = 2(3) + 2(3) + 7(1) = 19
 Now in our minimax search, we can set a maximum _depth_ to look ahead, and after this depth is reached we stop, evaluate and assign the evaluation score to the position. We can then propagate the scores back to the root position as before. An illustrative example:
 
 <img
+  loading="lazy"
+  decoding="async"
   className="inline"
   src="/static/images/Blog/programming_chess_engines_part_2_3.png"
-  alt="diagram of shifting a pawn bitboard to move forward 1 square"
+  alt="minimax tree: leaf positions evaluated at +7, -2, +8 and -6; Black picks the minimum at each node (-2, +8, -6) and White picks the maximum, +8, at the root"
   style={{ width: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
 />
 
@@ -97,9 +103,9 @@ There are broadly 2 classes of improvements we can make to the minimax algorithm
 - Search: to search more positions in the same amount of time, or to search in a more efficient way
 - Evaluation: to improve the evaluation function, giving us a more precise estimate of the true value of the position
 
-## Search Improvements
+### Search Improvements
 
-### Alpha-Beta Pruning
+#### Alpha-Beta Pruning
 
 The first improvement we'll discuss is a modification to the minimax depth search. The idea of alpha-beta is to avoid searching large unnecessary parts of the game tree. The essence of this algorithm can be demonstrated with the following example:
 
@@ -112,7 +118,7 @@ Therefore, we can 'prune' the search of move B early, without losing any accurac
 
 Using alpha-beta, we can reach a much higher search depth with the same compute power, thus improving the engine's accuracy.
 
-### Move Ordering
+#### Move Ordering
 
 When evaluating moves using alpha-beta, the order in which we consider moves matters a lot. If we can start by evaluating the best moves in a position, we can quickly prune the game tree since we already have an accurate alpha or beta heuristic.
 
@@ -122,13 +128,13 @@ There are many techniques and heuristics that can be used to try evaluate the be
 - [Killer Heuristic](https://www.chessprogramming.org/Killer_Heuristic): we remember moves that caused a pruning in alpha-beta search in sibling subtrees, as these moves are likely to have high impact on the position
 - [Hash Move](https://www.chessprogramming.org/Hash_Move): transpositions are a very commonplace occurrence during search, where the exact same position arises from a different move order. To avoid having to evaluate the same position many times, we can store a hash table from position to evaluation and perform a quick lookup before search to check if we already have a stored evaluation for that position
 
-### The Horizon Effect
+#### The Horizon Effect
 
 One issue we can run into with limited depth search is that the evaluation function fails to consider dynamic factors in the position. Consider a position where we can capture the opponent's queen, leading to a 9-point evaluation swing! If we terminate the search there and add up all of the piece scores, we will have grossly underestimated the true value of the position. This the major downside of having a fixed search depth or _horizon_.
 
 To account for the horizon effect, we can slightly modify the algorithm to keep searching even after the fixed depth is reached until there are no more forcing moves (captures, checks, promotions). This modification is referred to as [Quiescence Search](https://www.chessprogramming.org/Quiescence_Search).
 
-### Iterative Deepening
+#### Iterative Deepening
 
 Chess engines don't have infinite time to run a large-depth search. How we do know what depth to bound our search? If it's too small, our engine will not be as strong as we want. If it's too large, our engine will take forever to generate a move.
 
@@ -141,7 +147,7 @@ One way of handling this problem is to start with the lowest-depth search, and o
 
 In the above scenario, we will choose move Z, since it is the deepest search we successfully terminated.
 
-#### Principal Variation
+##### Principal Variation
 
 One advantage of iterative deepening is that we can use the best move sequence or _principal variation (PV)_ from a lower depth to inform our move ordering for the higher depth. For example:
 
@@ -152,27 +158,27 @@ Surprisingly, dynamic move ordering heuristics such as PV that are enabled by it
 
 With our search improvements complete, we can now discuss improvements in the evaluation function, which gets a much more concise treatment as the complexity mostly stems from domain-specific knowledge rather than interesting algorithms or techniques.
 
-## Evaluation Improvements
+### Evaluation Improvements
 
 Going beyond the basic evaluation function of adding all of the piece values, we can start to build a hand-crafted evaluation (HCE) function, which also takes into account many other aspects of the position. It is common to take a linear combination of the different features to calculate the final evaluation. I'll briefly mention some of these features below:
 
-### Piece-Square Tables
+#### Piece-Square Tables
 
 In chess, a common heuristic is to place your pieces in the center of the board, since they tend to have stronger mobility and power in the centralized position. However, the King should be away from the center and towards the edge since it is the most vulnerable piece. Bishops are long-range attackers so they can be effective from the edge whereas Knights are the opposite. Such piecewise heuristics can be encoded by adding a modifier to each piece's score depending on the location on the chessboard. This should give us a slightly better estimate of the value of the pieces.
 
-### Mobility
+#### Mobility
 
 The more possible moves a piece has, the more effective it is at controlling the board. We can account for this by rewarding pieces/positions with high mobility and penalizing low mobility.
 
-### King Safety
+#### King Safety
 
 Reward positions where the king is shielded by our own pieces, and penalize positions where the king is open/attacked by many enemy pieces.
 
-### Space
+#### Space
 
 How many squares on the chessboard does our pieces control? The higher this number, the better our position is likely to be, since having more space translates to better piece maneuverability and opportunities for attack/exploitation.
 
-## Conclusion
+### Conclusion
 
 The combination of a meticulously hand-crafted evaluation function and a highly optimized search algorithm has culminated in the Stockfish chess engine (amongst many others). This brings us roughly to the state-of-the-art from about 5-10 years ago.
 
@@ -180,7 +186,7 @@ A note to the curious: while I've covered many of the fundamental building block
 
 Thank you for sticking until the end! I'll see you in part 3, where I'll talk about the latest advancements using Neural Networks and Deep Reinforcement Learning.
 
-## Links
+### Links
 
 - [Programming Chess Engines Part 1](https://www.henryli.dev/blog/Programming-Chess-Engines-Part-1)
 - [Minimax](https://www.chessprogramming.org/Minimax)
