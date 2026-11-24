@@ -471,11 +471,11 @@ export default function PrivacyPolicy() {
             <li>
               By email:{' '}
               <a
-                href="mailto:lih8@tcd.ie"
+                href="mailto:henry.li.london@gmail.com"
                 rel="external nofollow noopener noreferrer"
                 target="_blank"
               >
-                lih8@tcd.ie
+                henry.li.london@gmail.com
               </a>
             </li>
           </ul>

@@ -10,7 +10,7 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/logo.png',
-  email: 'lih8@tcd.ie',
+  email: 'henry.li.london@gmail.com',
   github: 'https://github.com/yellowdragoon',
   twitter: 'https://x.com/yellowdragoon1',
   linkedin: 'https://www.linkedin.com/in/henry-li-219a511b8/',
