@@ -1,5 +1,15 @@
 const projectsData = [
   {
+    title: 'Chess Engines',
+    description: `Chess engines written in C/C++ and Python, using magic bitboards for move generation, alpha-beta search, and a Perft driver to test correctness. I wrote about building one in my Programming Chess Engines blog series.`,
+    imgSrc: '',
+    href: '/blog/Programming-Chess-Engines-Part-1',
+    github: 'https://github.com/yellowdragoon/Chess_Engine_Cpp',
+    tech1: 'C/C++',
+    tech2: 'Python',
+    tech3: 'Chess',
+  },
+  {
     title: 'HTTP Web Proxy',
     description: `an implementation of an HTTP proxy server using Python. The proxy server acts as an intermediary between clients and web servers, enabling features such as caching, access control, and bandwidth optimization.`,
     imgSrc: '',

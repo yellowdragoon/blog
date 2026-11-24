@@ -70,27 +70,21 @@ export default function AuthorLayout({ children, frontMatter }) {
                 animationDelay={300}
                 animationDuration={3000}
               >
-                {text1} Currently, I am improving Debit payments at{' '}
+                {text1} Currently, I'm a Product Engineer at{' '}
                 <Link
-                  href={'https://stripe.com/ie'}
+                  href={'https://www.sequencehq.com'}
                   className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
                 >
-                  Stripe.
+                  Sequence
                 </Link>
+                , where I build across the billing and revenue platform, from integrations and APIs
+                to AI agents.
               </RoughNotation>
             </p>
             <br />
             <p className="sm:block md:block lg:block">
-              I love broadening my horizons by finding new ways to combine my interests. Most
-              recently, I've decided to start writing on my new blog to materialize some of my
-              thoughts. I've also started to get involved around the various events held at{' '}
-              <Link
-                href={'https://dogpatchlabs.com/'}
-                className="special-underline no-underline hover:text-gray-100 dark:text-gray-100 hover:dark:text-gray-100"
-              >
-                Dogpatch Labs
-              </Link>{' '}
-              in the last year - it's very inspiring to meet many talented builders.
+              I love broadening my horizons by finding new ways to combine my interests, and this
+              blog is where I write some of those thoughts down.
             </p>
             <br />
             <p>
